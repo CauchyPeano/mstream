@@ -13,7 +13,7 @@ import java.util.*;
 public class RestEndpoint {
 
     @Autowired
-    EventRepository eventRepository;
+    private EventRepository eventRepository;
 
     @GetMapping
     public List<Event> test() {

@@ -1,6 +1,8 @@
 package de.cauchypeano.mstream.data;
 
+import com.fasterxml.jackson.annotation.JacksonAnnotation;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,9 +13,11 @@ public class Event {
 
     @Id
     @Column(name = "id", unique = true, nullable = false)
+    @JsonProperty("id")
     private String id;
 
     @Column(name = "machine_id", nullable = false)
+    @JsonProperty("maschine_id")
     private String maschineId;
 
     @Column(nullable = false)
