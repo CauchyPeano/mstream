@@ -39,7 +39,10 @@ dependencies {
     compile('org.springframework:spring-websocket')
     compile('org.springframework:spring-messaging')
 	compile('org.liquibase:liquibase-core')
+
 	compile('com.h2database:h2')
+
+    compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
 
     compile('com.github.eoinsha:JavaPhoenixChannels:0.2') {
         exclude module: 'groovy-all'

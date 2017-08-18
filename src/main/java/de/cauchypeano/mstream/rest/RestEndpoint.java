@@ -17,7 +17,6 @@ public class RestEndpoint {
 
     @GetMapping
     public List<Event> test() {
-        eventRepository.save(createRandomEvent());
         Iterable<Event> all = eventRepository.findAll();
         return convertToList(all);
     }
@@ -28,23 +27,6 @@ public class RestEndpoint {
         return result;
     }
 
-    private Event createRandomEvent() {
-        Event event = new Event();
-        event.setId(newRandomUUID());
-        event.setMaschineId(newRandomUUID());
-        event.setStatus(randomEventStatus());
-        event.setTimestamp(new Date());
-        return event;
-    }
 
-    private EventStatus randomEventStatus() {
-        Random rnd = new Random();
-        int i = rnd.nextInt(EventStatus.values().length);
-        return EventStatus.values()[i];
-    }
-
-    private String newRandomUUID() {
-        return UUID.randomUUID().toString();
-    }
 
 }
